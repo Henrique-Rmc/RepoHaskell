@@ -1,3 +1,12 @@
+--Escreva um programa que retorna o valor (R$)
+--gasto por um aparelho eletrônico dada a sua 
+--potencia (Watts), tempo de uso diário (Horas) 
+--e o custo por kWh. Sabendo que:
+
+--Consumo = (potência em watt/1000) x (tempo de uso diario) = total em KWh
+
+--Gasto = Consumo * custo por kWh
+
 import Text.Printf
 
 
@@ -13,16 +22,18 @@ main = do
     input3 <- getLine
 
     let
-        num1 = read input1  
-        num2 = read input2  
-        num3 = read input3  
+        num1 = read input1 :: Float
+        num2 = read input2 :: Float
+        num3 = read input3 :: Float
        
-
         consumoFinal = consumo num1 num2
 
-        gastoDiario = consumoFinal * num2
+        gastoDiario = consumoFinal * num3
+
+        gastoSemanal = gastoDiario * 7
 
     printf "consumo = %.2fkwh\n" consumoFinal
     printf "consumo = %.2fkwh\n" gastoDiario
+    printf "Gasto semanal = R$%.2f\n" gastoSemanal
   
 
